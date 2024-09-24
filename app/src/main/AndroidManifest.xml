@@ -13,6 +13,21 @@
         android:theme="@style/Theme.Didongcuoiki"
         tools:targetApi="31">
         <activity
+            android:name=".XacNhanTaiKhoanActivity"
+            android:exported="false" />
+        <activity
+            android:name=".WelcomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LoginSigUpActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LayLaiMatKhauActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ChiTietSanPhamActivity"
+            android:exported="false" />
+        <activity
             android:name=".ViCuaToiActivity"
             android:exported="false" />
         <activity
