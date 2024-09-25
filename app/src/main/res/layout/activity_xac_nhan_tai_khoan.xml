@@ -40,12 +40,13 @@
                 android:drawableStart="@drawable/icon_ten_tai_khoan_login_sigup"
                 android:drawablePadding="10dp"
                 android:background="@drawable/custom_edittext_login_sigup"
+                android:id="@+id/edXacNhanTenDangNhap"
                 android:padding="20dp"/>
         </com.google.android.material.textfield.TextInputLayout>
         <androidx.appcompat.widget.AppCompatButton
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/btnSigUp"
+            android:id="@+id/btnXacNhanTaiKhoan"
             android:layout_marginEnd="10dp"
             android:layout_marginStart="10dp"
             android:layout_marginTop="20dp"

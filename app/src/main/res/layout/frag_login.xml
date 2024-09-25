@@ -21,6 +21,7 @@
             android:drawableStart="@drawable/icon_ten_tai_khoan_login_sigup"
             android:drawablePadding="10dp"
             android:background="@drawable/custom_edittext_login_sigup"
+            android:id="@+id/edTenDangNhapLogin"
             android:padding="20dp"/>
     </com.google.android.material.textfield.TextInputLayout>
     <com.google.android.material.textfield.TextInputLayout
@@ -42,6 +43,7 @@
             android:drawablePadding="10dp"
             android:background="@drawable/custom_edittext_login_sigup"
             android:inputType="textPassword"
+            android:id="@+id/edMatKhauLogin"
             android:padding="20dp"/>
     </com.google.android.material.textfield.TextInputLayout>
     <TextView

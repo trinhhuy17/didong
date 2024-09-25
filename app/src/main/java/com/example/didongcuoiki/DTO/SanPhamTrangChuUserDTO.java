@@ -1,14 +1,19 @@
 package com.example.didongcuoiki.DTO;
 
 public class SanPhamTrangChuUserDTO {
-    public int idSanPhamUser;
-    public int anhSanPhamUser,iconGioHangUser;
+    public int idSanPhamUser, idLoaiSanPham;
+    public String anhSanPhamUser;
     public String tenSanPhamUser;
-    public String giaSanPhamUser;
-    public SanPhamTrangChuUserDTO(int idSanPhamUser, int anhSanPhamUser, int iconGioHangUser, String tenSanPhamUser, String giaSanPhamUser) {
+    public int giaSanPhamUser;
+    public String moTaSp;
+
+    public int soLuongSp;
+    public SanPhamTrangChuUserDTO() {
+    }
+    public SanPhamTrangChuUserDTO(int idSanPhamUser, String anhSanPhamUser, String tenSanPhamUser, int giaSanPhamUser) {
         this.idSanPhamUser = idSanPhamUser;
         this.anhSanPhamUser = anhSanPhamUser;
-        this.iconGioHangUser = iconGioHangUser;
+
         this.tenSanPhamUser = tenSanPhamUser;
         this.giaSanPhamUser = giaSanPhamUser;
     }
@@ -18,28 +23,46 @@ public class SanPhamTrangChuUserDTO {
     public void setIdSanPhamUser(int idSanPhamUser) {
         this.idSanPhamUser = idSanPhamUser;
     }
-    public int getAnhSanPhamUser() {
+    public String getAnhSanPhamUser() {
         return anhSanPhamUser;
     }
-    public void setAnhSanPhamUser(int anhSanPhamUser) {
+    public void setAnhSanPhamUser(String anhSanPhamUser) {
         this.anhSanPhamUser = anhSanPhamUser;
     }
-    public int getIconGioHangUser() {
-        return iconGioHangUser;
-    }
-    public void setIconGioHangUser(int iconGioHangUser) {
-        this.iconGioHangUser = iconGioHangUser;
-    }
+
     public String getTenSanPhamUser() {
         return tenSanPhamUser;
     }
     public void setTenSanPhamUser(String tenSanPhamUser) {
         this.tenSanPhamUser = tenSanPhamUser;
     }
-    public String getGiaSanPhamUser() {
+    public int getGiaSanPhamUser() {
         return giaSanPhamUser;
     }
-    public void setGiaSanPhamUser(String giaSanPhamUser) {
+    public void setGiaSanPhamUser(int giaSanPhamUser) {
         this.giaSanPhamUser = giaSanPhamUser;
+    }
+
+
+    public int getIdLoaiSanPham() {
+        return idLoaiSanPham;
+    }
+    public void setIdLoaiSanPham(int idLoaiSanPham) {
+        this.idLoaiSanPham = idLoaiSanPham;
+    }
+    public String getMoTaSp() {
+        return moTaSp;
+    }
+    public void setMoTaSp(String moTaSp) {
+        this.moTaSp = moTaSp;
+    }
+    public int getSoLuongSp() {
+        return soLuongSp;
+    }
+    public void setSoLuongSp(int soLuongSp) {
+        this.soLuongSp = soLuongSp;
+    }
+    public String toString(){
+        return "Tên : "+tenSanPhamUser+" Giá : "+giaSanPhamUser;
     }
 }

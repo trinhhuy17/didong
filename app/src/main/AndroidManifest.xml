@@ -13,6 +13,9 @@
         android:theme="@style/Theme.Didongcuoiki"
         tools:targetApi="31">
         <activity
+            android:name=".ChiTietDonDatUserActivity"
+            android:exported="false" />
+        <activity
             android:name=".ThemSanPhamAdmin"
             android:exported="false" />
         <activity
