@@ -133,11 +133,11 @@
                     android:background="@drawable/custom_bg_sua_img"
                     android:src="@drawable/img_bap_cai_trang_chu"/>
             </LinearLayout>
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnSuaSp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="#00EEEE"
+                android:background="@drawable/cusstom_btn"
                 android:layout_marginTop="25dp"
                 android:layout_marginBottom="20dp"
                 android:text="Hoàn thành"

@@ -22,6 +22,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+import android.widget.EditText;
+import android.text.Editable;
+import android.text.TextWatcher;
 import com.example.didongcuoiki.DanhSachSanPhamUseActivity;
 import com.example.didongcuoiki.DAO.SanPhamTrangChuDAO;
 import com.example.didongcuoiki.Adapter.AdapterSliderTrangChuUser;
@@ -40,6 +43,7 @@ public class FragTrangChuUser extends Fragment {
     private LinearLayout layoutRau,layoutCu,layoutQua,layoutHat;
     private SanPhamTrangChuDAO sanPhamTrangChuDAO;
     private  List<SanPhamTrangChuUserDTO> list;
+    private EditText edTimKiemSanPham;
 
     @Nullable
     @Override
@@ -58,6 +62,7 @@ public class FragTrangChuUser extends Fragment {
         viewPager2 = view.findViewById(R.id.viewPager2TrangChuUser);
         circleIndicator3 = view.findViewById(R.id.ci3);
         recyclerView = view.findViewById(R.id.rcvTrangChuUser);
+        edTimKiemSanPham = view.findViewById(R.id.edTimKiemTrangChu);
 
         sanPhamTrangChuDAO = new SanPhamTrangChuDAO(getContext());
         //Hiển thi tên tài khoản
@@ -123,8 +128,37 @@ public class FragTrangChuUser extends Fragment {
         GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(),2,GridLayoutManager.VERTICAL,false);
         recyclerView.setLayoutManager(gridLayoutManager);
         recyclerView.setAdapter(adapterTrangChuUser);
+        //Tìm kiếm sản phẩm
+        edTimKiemSanPham.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                String tenSp = s.toString();
+                timKiemSanPham(tenSp);
+
+            }
+            @Override
+            public void afterTextChanged(Editable s) {
+            }
+        });
         super.onViewCreated(view, savedInstanceState);
     }
+    private void timKiemSanPham(String tenSp) {
+        List<SanPhamTrangChuUserDTO> listSeach = sanPhamTrangChuDAO.timKiemSanPhamTrangChu(tenSp);
+        if (listSeach.size() > 0) {
+            adapterTrangChuUser = new AdapterTrangChuUser(getContext(),listSeach);
+            Toast.makeText(getContext(), "Có "+listSeach.size()+" sản phẩm bạn muốn tìm"
+                    , Toast.LENGTH_SHORT).show();
+        }else {
+            adapterTrangChuUser = new AdapterTrangChuUser(getContext(),list);
+            Toast.makeText(getContext(), "Không tìm thấy sản phẩm", Toast.LENGTH_SHORT).show();
+        }
+        recyclerView.setAdapter(adapterTrangChuUser);
+        adapterTrangChuUser.notifyDataSetChanged();
+    }
+
     private List<SanPhamTrangChuUserDTO> getDataSanPham() {
         List<SanPhamTrangChuUserDTO> list = new ArrayList<>();
 

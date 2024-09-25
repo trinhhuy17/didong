@@ -8,6 +8,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import java.util.ArrayList;
 import java.util.List;
 import com.example.didongcuoiki.Adapter.AdapterThongKeAdmin;
@@ -20,7 +21,10 @@ public class FragmentThongKeAdmin extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.frg_thong_ke_admin, container, false);
         recyclerViewThongKe = view.findViewById(R.id.recyclerThongKe);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());
         AdapterThongKeAdmin adapterThongKeAdmin = new AdapterThongKeAdmin(getThongKeAdmin());
+
+        recyclerViewThongKe.setLayoutManager(layoutManager);
         recyclerViewThongKe.setAdapter(adapterThongKeAdmin);
         return view;
     }

@@ -18,6 +18,12 @@ import com.example.didongcuoiki.Fragment.FragTrangChuUser;
 import com.example.didongcuoiki.Fragment.FragmentTrangChuAdmin;
 
 
+import com.example.didongcuoiki.Fragment.FragTaiKhoanAdmin;
+import com.example.didongcuoiki.Fragment.FragTaiKhoanUser;
+import com.example.didongcuoiki.Fragment.FragmentCuTrangChuAdmin;
+import com.example.didongcuoiki.Fragment.FragmentDanhSachDonDatAdmin;
+import com.example.didongcuoiki.Fragment.FragmentThongKeAdmin;
+import com.example.didongcuoiki.Fragment.FragmentTrangChuAdmin;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -72,6 +78,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (index != 1){
+
                     //Thêm fragTrangChu
                     manager.beginTransaction().replace(R.id.fragContainerView,new FragTrangChuUser()).commit();
                     //Ẩn đi các textView của các icon không đc click

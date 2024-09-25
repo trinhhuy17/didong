@@ -132,11 +132,11 @@
                     android:layout_marginBottom="20dp"
                     android:src="@drawable/img_camera_admin"/>
             </LinearLayout>
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnThemSp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="#00EEEE"
+                android:background="@drawable/cusstom_btn"
                 android:layout_marginTop="25dp"
                 android:layout_marginBottom="20dp"
                 android:text="Hoàn thành"

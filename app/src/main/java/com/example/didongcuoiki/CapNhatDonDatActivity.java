@@ -23,6 +23,26 @@ public class CapNhatDonDatActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_cap_nhat_don_dat);
+        edtTenKhachHang = findViewById(R.id.edtTenKhachHang);
+        edtSoDienThoai = findViewById(R.id.edtSoDienThoai);
+        edtDiaChi = findViewById(R.id.edtDiaChiCapNhat);
+        btnCapNhatThongTinDiaChi = findViewById(R.id.btnCapNhatThongTinDiaChi);
+        imgBackCapNhatDiaChi = findViewById(R.id.imgBackcapNhatDiaChi);
+        imgBackCapNhatDiaChi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+        Intent  intent = getIntent();
+        if (intent != null){
+            String tenKhachHang = intent.getStringExtra("ten_khach_hang");
+            String soDienThoai = intent.getStringExtra("so_dien_thoai");
+            String diaChi = intent.getStringExtra("dia_chi");
+            edtTenKhachHang.setText(tenKhachHang);
+            edtSoDienThoai.setText(soDienThoai);
+            edtDiaChi.setText(diaChi);
+        }
 
 
     }

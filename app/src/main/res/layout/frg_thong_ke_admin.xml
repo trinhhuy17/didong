@@ -12,14 +12,12 @@
             android:layout_height="wrap_content"
             android:text="Thống kê sản phẩm bán chạy"
             android:textSize="20dp"
-            android:paddingLeft="20dp"
+            android:layout_gravity="center_horizontal"
             android:textStyle="bold"
             android:fontFamily="serif"/>
     </androidx.appcompat.widget.Toolbar>
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerThongKe"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="10dp"
-        android:paddingTop="5dp"/>
+        android:layout_height="match_parent" />
 </LinearLayout>
